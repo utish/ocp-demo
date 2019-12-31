@@ -1,9 +1,7 @@
 pipeline {
     agent any
     
-    script {
-      System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS", true);
-    }
+    
 
     stages {
         stage ('Initialize') {
@@ -18,6 +16,10 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
+                
+                script {
+                    System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS", true);
+                }
             }
             post {
                 success {
