@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     script {
-      ystem.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS", true);
+      System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS", true);
     }
 
     stages {
