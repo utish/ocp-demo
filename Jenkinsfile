@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    script {
+      ystem.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS", true);
+    }
 
     stages {
         stage ('Initialize') {
