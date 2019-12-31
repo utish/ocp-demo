@@ -15,11 +15,13 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true install' 
-                
                 script {
                     System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS", true);
                 }
+                
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+                
+                
             }
             post {
                 success {
